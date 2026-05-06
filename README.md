@@ -15,6 +15,14 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
+## Check functionality
+
+- GET /health
+- GET /errors/a
+- GET /errors/b/1
+- POST /users/validate
+- POST /users
+
 ## Database and migrations
 
 1. Copy .env.example to .env and set DATABASE_URL if needed.
@@ -30,4 +38,10 @@ alembic upgrade head
 
 ```bash
 alembic upgrade head
+```
+
+## Tests
+
+```bash
+pytest -q
 ```

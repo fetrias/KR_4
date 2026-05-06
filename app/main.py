@@ -5,7 +5,10 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, EmailStr, Field, conint
 
+from app.users_inmemory import router as users_router
+
 app = FastAPI(title="KR4")
+app.include_router(users_router)
 
 
 class ErrorResponse(BaseModel):
